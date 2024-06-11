@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const ViewAll = () => {
-    const[data,setData]=useState([{
-"name":"",
-        "id":"",
-        "job":"",
-        "address":""
+    const[data,setData]=useState([])
+    
+const fetchData=(
+    ()=>{
+        axios.get(
+            ""
+        ).then(
+            (response)=>{
+                setData(response.data)
+            }
+        ).catch()
     }
-    ]
 )
+useEffect(()=>{fetchData()},[])
     
     return (
         <div>
